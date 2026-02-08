@@ -1,14 +1,9 @@
-# Use Java 17 runtime
-FROM eclipse-temurin:17-jre
+vFROM eclipse-temurin:21-jre
 
-# Set working directory
-WORKDIR /app
+ WORKDIR /app
 
-# Copy jar file
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+ COPY target/*.jar app.jar
 
-# Expose port (Render will override)
-EXPOSE 8080
+ EXPOSE 8080
 
-# Run the app
-CMD ["java", "-jar", "app.jar"]
+ ENTRYPOINT ["java","-jar","app.jar"]
